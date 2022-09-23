@@ -1,1 +1,22 @@
-<p>market works!</p>
+<div class="market">
+  <div class="market__wrapper">
+    <div class="market__content">
+      <app-market-panel></app-market-panel>
+      <div class="market__blocks">
+        <div class="market__blocks__filters">
+          <app-filters-card></app-filters-card>
+          <div class="market__blocks__button">
+            <button>Сбросить фильтры</button>
+          </div>
+        </div>
+        <div class="market__blocks__products">
+          <app-balance-card></app-balance-card>
+          <div *ngFor="let i of data_cards">
+            <app-product-card title="{{i.title}}" category="{{i.category}}" image="{{i.image}}" price="{{i.price}}" brand="{{i.brand}}">
+            </app-product-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

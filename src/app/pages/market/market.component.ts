@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IProduct } from 'src/app/interface/IProduct';
+import { productsInfo } from 'src/app/mocks/productMock';
 
 @Component({
   selector: 'app-market',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarketComponent implements OnInit {
 
-  constructor() { }
+  @Input() data_cards: Array<IProduct>;
+  constructor() {
+    this.data_cards = productsInfo;
+  }
 
   ngOnInit(): void {
   }
