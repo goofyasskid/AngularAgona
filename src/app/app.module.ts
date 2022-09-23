@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SwiperModule } from 'swiper/angular';
+import { LeafletModule } from "@asymmetrik/ngx-leaflet";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -63,6 +64,7 @@ import { UserCardComponent } from './components/cards/user-card/user-card.compon
     BrowserModule,
     AppRoutingModule,
     [SwiperModule],
+    LeafletModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

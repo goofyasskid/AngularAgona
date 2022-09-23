@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.sass']
 })
-export class SelectComponent implements OnInit {
+export class SelectComponent  {
 
-  constructor() { }
+  @Input() title: string;
+  @Input() item: string[]
 
-  ngOnInit(): void {
-  }
+  constructor() {
+    this.title ="";
+		this.item = []
+   }
 
 }
