@@ -1,1 +1,30 @@
-<p>slider works!</p>
+<div class="slider">
+  <div class="slider__nav">
+    <div class="prev">
+      <img src="/assets/prev.svg" alt="prev" />
+    </div>
+    <div class="next">
+      <img src="/assets/next.svg" alt="next" />
+    </div>
+  </div>
+  <swiper [config]='config' class="customSwiper">
+    <ng-template swiperSlide>
+      <app-slider-card title='Сделаем мир чище'
+        text='Сдай макулатуру или старую одежду и получи скидку на покупку товаров из переработанных материалов'
+        buttonText='Условия сервиса' background='#B3EDC8' image='/assets/first.png'>
+      </app-slider-card>
+    </ng-template>
+    <ng-template swiperSlide>
+      <app-slider-card title='А вы знали...'
+        text='что среднее время разложения пластмассовых изделий колеблется от 400 до 700 лет,  а полиэтиленовых пакетов — от 100 до 200 лет? '
+        buttonText='Узнать больше' background='#FFE48F' image='/assets/second.png'>
+      </app-slider-card>
+    </ng-template>
+    <ng-template swiperSlide>
+      <app-slider-card title='Что с масками?'
+        text='Сдай макулатуру или старую одежду и получи скидку на покупку товаров из переработанных материалов'
+        buttonText='Пункты сбора масок' background='#BFF0DE' image='/assets/third.png'>
+      </app-slider-card>
+    </ng-template>
+  </swiper>
+</div>
