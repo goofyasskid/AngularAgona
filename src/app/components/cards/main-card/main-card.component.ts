@@ -16,6 +16,4 @@ export class MainCardComponent{
 		this.text ="";
     this.image ="";
    }
-
-
 }

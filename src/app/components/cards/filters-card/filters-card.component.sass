@@ -1,0 +1,32 @@
+.filter_card
+  background: white
+  border: 1px solid rgba(62, 80, 114, 0.16)
+  border-radius: 16px
+  padding: 24px
+  width: 100%
+  box-sizing: border-box
+  &__block
+    margin-bottom: 24px
+    > h3
+      color: rgba(0, 11, 38, 0.8)
+      margin-bottom: 17px
+  &__box
+    margin-bottom: 12px
+    > label
+      font-size: 14px
+      color: rgba(0, 11, 38, 0.72)
+      > input
+        display: none
+        & ~ label::before
+          content: '\27'
+          color: white
+          width: 18px
+          height: 18px
+          border: 1.5px solid rgba(0, 11, 38, 0.4)
+          border-radius: 4px
+          margin: 0px 9px -3px 0
+          display: inline-block
+          &:checked
+            color: red
+            border: 2px inset red
+

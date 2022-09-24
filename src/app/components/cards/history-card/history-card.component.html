@@ -1,1 +1,20 @@
-<p>history-card works!</p>
+<div class="history">
+  <div class="history__wrapper">
+    <div class="history__content">
+      <div *ngFor="let i of data_history">
+        <div class="history__info">
+          <label>{{i.title}}</label>
+          <div class="history__blocks">
+            <div *ngFor="let item of i.info">
+              <p>{{item}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="history__price">
+      <img src='/assets/money.svg' alt="money" />
+      <span>1000</span>
+    </div>
+  </div>
+</div>

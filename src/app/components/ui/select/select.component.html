@@ -2,5 +2,7 @@
   <option value="" disabled selected>
     {{title}}
   </option>
-  <option>{{item}}</option>
+  <div *ngFor="let i of variants">
+    <option>{{i}}</option>
+  </div>
 </select>

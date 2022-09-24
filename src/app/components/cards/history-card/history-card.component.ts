@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { historyInfo } from 'src/app/mocks/historyMock';
 
 @Component({
   selector: 'app-history-card',
   templateUrl: './history-card.component.html',
   styleUrls: ['./history-card.component.sass']
 })
-export class HistoryCardComponent implements OnInit {
+export class HistoryCardComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  @Input() data_history: Array<any>;
+  constructor() {
+    this.data_history = historyInfo;
   }
-
 }

@@ -8,11 +8,11 @@ import { Component, Input } from '@angular/core';
 export class SelectComponent  {
 
   @Input() title: string;
-  @Input() item: string[]
+  @Input() variants: string[]
 
   constructor() {
     this.title ="";
-		this.item = []
+		this.variants = []
    }
 
 }

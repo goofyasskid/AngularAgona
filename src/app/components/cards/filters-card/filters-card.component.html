@@ -1,1 +1,13 @@
-<p>filters-card works!</p>
+<div class="filter_card">
+  <div *ngFor="let i of data_filters">
+    <div class="filter_card__block">
+      <h3>{{i.title}}</h3>
+      <div *ngFor="let variant of i.variants">
+        <div class="filter_card__box">
+          <input type="checkbox" />
+          <label>{{variant}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
