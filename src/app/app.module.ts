@@ -30,6 +30,8 @@ import { ProductCardComponent } from './components/cards/product-card/product-ca
 import { PromoCardComponent } from './components/cards/promo-card/promo-card.component';
 import { SliderCardComponent } from './components/cards/slider-card/slider-card.component';
 import { UserCardComponent } from './components/cards/user-card/user-card.component';
+import { HistoryOutletComponent } from './components/ui/outlet/history-outlet/history-outlet.component';
+import { PromoOutletComponent } from './components/ui/outlet/promo-outlet/promo-outlet.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { UserCardComponent } from './components/cards/user-card/user-card.compon
     ProductCardComponent,
     PromoCardComponent,
     SliderCardComponent,
-    UserCardComponent
+    UserCardComponent,
+    HistoryOutletComponent,
+    PromoOutletComponent
   ],
   imports: [
     BrowserModule,

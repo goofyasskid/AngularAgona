@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContainerComponent } from './components/container/container.component';
+import { HistoryOutletComponent } from './components/ui/outlet/history-outlet/history-outlet.component';
+import { PromoOutletComponent } from './components/ui/outlet/promo-outlet/promo-outlet.component';
 import { MainComponent } from './pages/main/main.component';
 import { MarketComponent } from './pages/market/market.component';
 import { PointsComponent } from './pages/points/points.component';
@@ -18,6 +20,10 @@ const routes: Routes = [
       {
         path: 'points',
         component: PointsComponent,
+        // children: [
+        //   { path: 'cards', component: UserpromoCardComponent },
+        //   { path: ':cardId', component: HistoryCardComponent }
+        // ]
       },
       {
         path: 'market',
@@ -26,6 +32,10 @@ const routes: Routes = [
       {
         path: 'user',
         component: UserComponent,
+        children: [
+          { path: 'promo', component: PromoOutletComponent },
+          { path: 'history', component: HistoryOutletComponent }
+        ]
       }
     ]
   }
