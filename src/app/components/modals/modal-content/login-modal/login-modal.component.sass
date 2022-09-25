@@ -1,0 +1,55 @@
+.form
+  display: flex
+  justify-content: space-between
+  &__title
+    margin-bottom: 0.7em
+    font-style: normal
+    font-size: 25px
+  &__close
+    border: none
+    > button
+      background: none
+      border: none
+  &__input
+    margin: 1em 0
+    padding: 0
+    width: 100%
+    box-sizing: border-box
+    > input
+      width: 100%
+      padding: 1.5em 1em
+      border-radius: 8px
+      border: 1px solid rgba(0, 11, 38, 0.16)
+      color: rgba(0, 11, 38, 0.4)
+      box-sizing: border-box
+  &__button
+    > button
+      color: white
+      background: #07C88E
+      border-radius: 8px
+      border: none
+      width: 100%
+      padding: 16px 24px
+      &:hover
+        box-shadow: 0 0 10px #00000033
+  &__links
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin: 16px auto
+    > a
+      color: #07C88E
+      cursor: pointer
+  &__errors
+    color: red
+  &__button_partners
+    > button
+      background: rgba(62, 80, 114, 0.08)
+      border-radius: 8px
+      border: none
+      width: 100%
+      padding: 16px 24px
+      margin-top: 16px
+      &:hover
+        box-shadow: 0 0 10px #00000033
+

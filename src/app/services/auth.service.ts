@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorage } from '../utils/local-storage';
 import { IAuthParams, IUser } from '../interface/IUser';
 
-
 @Injectable({
   providedIn: 'root'
 })

@@ -7,7 +7,13 @@ import { OverlayModule } from "@angular/cdk/overlay";
 import { PortalModule } from "@angular/cdk/portal";
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DialogModule } from '@angular/cdk-experimental/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CommonModule } from '@angular/common';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { UrlInterceptorService } from './services/url-interceptor.service';
+import { ErrorInterceptorService } from './services/error-interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MarketComponent } from './pages/market/market.component';
@@ -38,10 +44,8 @@ import { UserCardComponent } from './components/cards/user-card/user-card.compon
 import { HistoryOutletComponent } from './components/ui/outlet/history-outlet/history-outlet.component';
 import { PromoOutletComponent } from './components/ui/outlet/promo-outlet/promo-outlet.component';
 import { MapOutletComponent } from './components/ui/outlet/map-outlet/map-outlet.component';
-import { CommonModule } from '@angular/common';
-import { AuthInterceptorService } from './services/auth-interceptor.service';
-import { UrlInterceptorService } from './services/url-interceptor.service';
-import { ErrorInterceptorService } from './services/error-interceptor.service';
+import { ModalContainerComponent } from './components/modals/modal-container/modal-container.component';
+import { LoginModalComponent } from './components/modals/modal-content/login-modal/login-modal.component';
 
 @NgModule({
   declarations: [
@@ -73,13 +77,16 @@ import { ErrorInterceptorService } from './services/error-interceptor.service';
     UserCardComponent,
     HistoryOutletComponent,
     PromoOutletComponent,
-    MapOutletComponent
+    MapOutletComponent,
+    ModalContainerComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     [SwiperModule],
     LeafletModule,
+    BrowserAnimationsModule,
     OverlayModule,
     PortalModule,
     HttpClientModule,
@@ -91,7 +98,8 @@ import { ErrorInterceptorService } from './services/error-interceptor.service';
       progressBar: true,
       positionClass: 'toast-bottom-center'
     }),
-    ToastContainerModule
+    ToastContainerModule,
+    DialogModule
   ],
   providers: [
     {

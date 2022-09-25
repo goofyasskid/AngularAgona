@@ -1,0 +1,38 @@
+<form [formGroup]='Form'>
+  <div class="form">
+    <div class="form__title">
+      <h3>Вход</h3>
+    </div>
+    <div class="form__close">
+      <button (click)="close(true)">
+        <img src="/assets/close.svg" alt="" />
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="form__input">
+      <input placeholder="Телефон" type='text' name='login' formControlName='login' />
+    </div>
+    <ng-container *ngIf='control("login")?.touched && control("login")?.errors'>
+      <span class="errors">Логин должен содержать минимум 4 символа</span>==
+    </ng-container>
+    <div class="form__input">
+      <input placeholder='Пароль' type='password' name='password' formControlName='password' />
+    </div>
+    <ng-container *ngIf='control("password")?.touched && control("password")?.errors'>
+      <span class="form__errors">Пароль должен содержать минимум 4 символа</span>
+    </ng-container>
+    <div>
+      <div class="form__button">
+        <button (click)="login();close(true)">Войти</button>
+      </div>
+      <div class="form__links">
+        <a>Войти с помощью смс</a>
+        <a>Регистрация</a>
+      </div>
+      <div class="form__button_partners">
+        <button (click)="close(true)">Вход для партнёров</button>
+      </div>
+    </div>
+  </div>
+</form>
