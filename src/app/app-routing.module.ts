@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PointsCardComponent } from './components/cards/points-card/points-card.component';
 import { ContainerComponent } from './components/container/container.component';
 import { HistoryOutletComponent } from './components/ui/outlet/history-outlet/history-outlet.component';
+import { MapOutletComponent } from './components/ui/outlet/map-outlet/map-outlet.component';
 import { PromoOutletComponent } from './components/ui/outlet/promo-outlet/promo-outlet.component';
 import { MainComponent } from './pages/main/main.component';
 import { MarketComponent } from './pages/market/market.component';
@@ -20,10 +22,10 @@ const routes: Routes = [
       {
         path: 'points',
         component: PointsComponent,
-        // children: [
-        //   { path: 'cards', component: UserpromoCardComponent },
-        //   { path: ':cardId', component: HistoryCardComponent }
-        // ]
+        children: [
+          { path: 'cardId', component: PointsCardComponent },
+          { path: 'cards', component: MapOutletComponent }
+        ]
       },
       {
         path: 'market',

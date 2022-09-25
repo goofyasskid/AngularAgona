@@ -32,6 +32,7 @@ import { SliderCardComponent } from './components/cards/slider-card/slider-card.
 import { UserCardComponent } from './components/cards/user-card/user-card.component';
 import { HistoryOutletComponent } from './components/ui/outlet/history-outlet/history-outlet.component';
 import { PromoOutletComponent } from './components/ui/outlet/promo-outlet/promo-outlet.component';
+import { MapOutletComponent } from './components/ui/outlet/map-outlet/map-outlet.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { PromoOutletComponent } from './components/ui/outlet/promo-outlet/promo-
     SliderCardComponent,
     UserCardComponent,
     HistoryOutletComponent,
-    PromoOutletComponent
+    PromoOutletComponent,
+    MapOutletComponent
   ],
   imports: [
     BrowserModule,

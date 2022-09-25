@@ -14,5 +14,4 @@ export class SelectComponent  {
     this.title ="";
 		this.variants = []
    }
-
 }
