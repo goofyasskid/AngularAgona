@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SwiperModule } from 'swiper/angular';
 import { LeafletModule } from "@asymmetrik/ngx-leaflet";
+import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
+import { OverlayModule } from "@angular/cdk/overlay";
+import { PortalModule } from "@angular/cdk/portal";
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +38,10 @@ import { UserCardComponent } from './components/cards/user-card/user-card.compon
 import { HistoryOutletComponent } from './components/ui/outlet/history-outlet/history-outlet.component';
 import { PromoOutletComponent } from './components/ui/outlet/promo-outlet/promo-outlet.component';
 import { MapOutletComponent } from './components/ui/outlet/map-outlet/map-outlet.component';
+import { CommonModule } from '@angular/common';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { UrlInterceptorService } from './services/url-interceptor.service';
+import { ErrorInterceptorService } from './services/error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -71,8 +80,36 @@ import { MapOutletComponent } from './components/ui/outlet/map-outlet/map-outlet
     AppRoutingModule,
     [SwiperModule],
     LeafletModule,
+    OverlayModule,
+    PortalModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ToastrModule.forRoot({
+      timeOut: 2500,
+      progressBar: true,
+      positionClass: 'toast-bottom-center'
+    }),
+    ToastContainerModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UrlInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
